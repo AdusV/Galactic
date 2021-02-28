@@ -34,7 +34,7 @@ public class SpawnChicken : MonoBehaviour
     
         clone = Instantiate(chicken, new Vector3(Random.Range(-15, 16), Random.Range(8, 5), -2), Quaternion.Euler(0, 180, 0));
         enemyCount++;
-        if(enemyCount>=maxEnemyCount)
+        if (enemyCount>=maxEnemyCount)
         {
             CancelInvoke("Spawn");
         }

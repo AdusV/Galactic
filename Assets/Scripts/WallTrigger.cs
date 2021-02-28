@@ -17,10 +17,7 @@ public class WallTrigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        
-            
+        other.gameObject.SetActive(false);
             Destroy(other.gameObject); 
-        
-       
     }
 }
