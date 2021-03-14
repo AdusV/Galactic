@@ -825,10 +825,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yellowWeapon: {fileID: 299179349678216788, guid: cd0c1e8e112f1d94da073872ab51b2a8,
     type: 3}
-  greenWeapon: {fileID: 317521978040504989, guid: 3e031cc991e06e845ad6e1bf72e30dee,
+  greenWeapon: {fileID: 5674892726397767871, guid: 163bd6042522a174f853a53f2ffc5e1f,
     type: 3}
-  timeBetweenSpawnGreen: 25
-  timeBetweenSpawnYellow: 42
+  timeBetweenSpawnGreen: 5
+  timeBetweenSpawnYellow: 10
   maxSpawn: 1
 --- !u!114 &971069860
 MonoBehaviour:
@@ -1020,7 +1020,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b357a2474d5d04392e7600572980ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aplitude: 200
+  Camera: {fileID: 0}
+  angle: 1
 --- !u!1 &1773686387
 GameObject:
   m_ObjectHideFlags: 0
@@ -1439,6 +1440,25 @@ PrefabInstance:
       propertyPath: yellowbullet
       value: 
       objectReference: {fileID: 4003279601768213400, guid: 0c2c7e4c5fc01b445a8b6700ad2b702d,
+        type: 3}
+    - target: {fileID: 1183322377, guid: 9e27c7a26ab195d4b91fcdf03e2cea04, type: 3}
+      propertyPath: prefubWeapons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183322377, guid: 9e27c7a26ab195d4b91fcdf03e2cea04, type: 3}
+      propertyPath: prefubWeapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 6517683510688753755, guid: 19883fcc67e72f147bb24d00a832ac12,
+        type: 3}
+    - target: {fileID: 1183322377, guid: 9e27c7a26ab195d4b91fcdf03e2cea04, type: 3}
+      propertyPath: prefubWeapons.Array.data[1]
+      value: 
+      objectReference: {fileID: 6517683510688753755, guid: 440c3fd587c4f7645a617bbebf11d256,
+        type: 3}
+    - target: {fileID: 1183322377, guid: 9e27c7a26ab195d4b91fcdf03e2cea04, type: 3}
+      propertyPath: prefubWeapons.Array.data[2]
+      value: 
+      objectReference: {fileID: 6517683510688753755, guid: 440c3fd587c4f7645a617bbebf11d256,
         type: 3}
     - target: {fileID: 3741443646287379749, guid: 9e27c7a26ab195d4b91fcdf03e2cea04,
         type: 3}

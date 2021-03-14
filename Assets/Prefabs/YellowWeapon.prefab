@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 299179349678216791}
   m_Layer: 0
   m_Name: YellowWeapon
-  m_TagString: Untagged
+  m_TagString: yellowBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yellowWeaponPoints: 1
+  greenbackPoints: -1
 --- !u!54 &299179349678216791
 Rigidbody:
   m_ObjectHideFlags: 0
