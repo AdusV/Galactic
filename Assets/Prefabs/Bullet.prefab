@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2938024089427007974}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: bull
+  m_TagString: defaultBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 5
+  damage: 5
 --- !u!54 &2938024089427007974
 Rigidbody:
   m_ObjectHideFlags: 0

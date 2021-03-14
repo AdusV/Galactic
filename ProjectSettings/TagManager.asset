@@ -6,6 +6,9 @@ TagManager:
   tags:
   - bull
   - Enemy
+  - defaultBullet
+  - yellowBullet
+  - greenBullet
   layers:
   - Default
   - TransparentFX

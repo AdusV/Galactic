@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class StarShipFire : MonoBehaviour
 {
-
-
-    /// 
     public static StarShipFire Instance = null;
 
     private void Awake()
@@ -48,7 +45,4 @@ public class StarShipFire : MonoBehaviour
             gunlist[i].SetActive(false);
         }
     }
-
-
-
-    }
+  }
