@@ -6,17 +6,15 @@ using UnityEngine;
 
 public class WeaponShip : MonoBehaviour
 {
-    public GameObject defaultWeapon;
     public List<GameObject> prefubWeapons = new List<GameObject>();
     private GameObject clone;
 
     //
     public GameObject currentWeapon;
+    private int currentWeaponId;
 
-
-    public Dictionary<string, GameObject> weapons = new Dictionary<string, GameObject>();
+    public List<GameObject> weapons = new List<GameObject>();
  
-    int weaponNumber = 1;
     
     void Start()
     {
@@ -29,33 +27,41 @@ public class WeaponShip : MonoBehaviour
         {
             clone = Instantiate(currentWeapon, transform.position, Quaternion.identity);
         }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            currentWeaponId  = (currentWeaponId == 0) ? weapons.Count() - 1 : currentWeaponId - 1;
+            currentWeapon = weapons[currentWeaponId];
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            currentWeaponId = (currentWeaponId == weapons.Count() - 1) ? 0 : currentWeaponId + 1;
+            currentWeapon = weapons[currentWeaponId];
+        }
     }
 
     public void SetDefaultWeapon()
     {
-        currentWeapon = defaultWeapon;
-        foreach (var weapon in weapons.Where(x => x.Value.tag != defaultWeapon.tag))
-        {
-            Destroy(weapon.Value);
-        }
-
+        currentWeapon = prefubWeapons.First();
+        currentWeaponId = 0;
         weapons.Clear();
-        weapons.Add(defaultWeapon.tag, defaultWeapon);
+        weapons.Add(prefubWeapons.First());
     }
 
     internal void AddWeapon(string tag)
     {
-        if (!weapons.TryGetValue(tag, out var newWapon))
+        var weapon = weapons.FirstOrDefault(x => x.tag == tag);
+        if (weapon == null)
         {
+            Debug.Log("test");
             var weaponPrefab = prefubWeapons.FirstOrDefault(x => x.tag == tag);
             if (weaponPrefab == null)
             {
                 throw new Exception("Brak rodzaju broni w deklarowanych prefabach");
             }
 
-            newWapon = weaponPrefab;
-            weapons.Add(tag, newWapon);
+            weapon = weaponPrefab;
+            weapons.Add(weapon);
         }
-        currentWeapon = newWapon;
+        currentWeapon = weapon;
     }
 }

@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 3741443646831114063}
   - component: {fileID: 3741443646831114062}
   - component: {fileID: 1183322377}
+  - component: {fileID: 425605624}
   m_Layer: 0
   m_Name: StarShip
   m_TagString: Player
@@ -169,5 +170,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4261ee98335a2d04aa7b2ce2db69d66b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 6517683510688753755, guid: 19883fcc67e72f147bb24d00a832ac12, type: 3}
-  bullet1: {fileID: 6517683510688753755, guid: 440c3fd587c4f7645a617bbebf11d256, type: 3}
+  prefubWeapons:
+  - {fileID: 6517683510688753755, guid: 19883fcc67e72f147bb24d00a832ac12, type: 3}
+  - {fileID: 6517683510688753755, guid: 440c3fd587c4f7645a617bbebf11d256, type: 3}
+  - {fileID: 6517683510688753755, guid: bcfa0ae478ac2a0409c47e55214de3fe, type: 3}
+  currentWeapon: {fileID: 0}
+  weapons: []
+--- !u!114 &425605624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3741443646287556939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769c89041d2d2de42afa393b2e5cba5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  protectTime: 3
+  isProtect: 0
+  renderer: {fileID: 3741443646289508147}

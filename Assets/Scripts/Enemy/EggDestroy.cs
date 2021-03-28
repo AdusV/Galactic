@@ -11,8 +11,13 @@ public class EggDestroy : MonoBehaviour
     {
         if(other.tag=="Player")
         {
+            PlayerMenager menager = other.GetComponent<PlayerMenager>();
+
+            if (menager.isProtect)
+                return;
+
             LivesCounterScript.Instance.loseLife();
-        Destroy(other.gameObject);
+            Destroy(other.gameObject);
             Instantiate(Player, new Vector3(0, -5, -2), Quaternion.Euler(90,180,0));
         }
         
