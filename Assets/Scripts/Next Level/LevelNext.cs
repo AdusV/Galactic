@@ -2,22 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelNext : MonoBehaviour
 {
-    void Start()
-    {
-        
-
-
-    }
+    public string newLevelName;
     private void Update()
     {
         var enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
         if (enemies.All(x => x.activeSelf == false))
         {
-            Application.LoadLevel(1);
+            SceneManager.LoadScene(newLevelName);
         }
     }
 
