@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   egg: {fileID: 4546708324289567639, guid: 95427ccc55281f947a21c4b1e8fea6bc, type: 3}
+  spawnThreshold: 100
+  spawnDecrement: 0.1
 --- !u!1 &6874639151339751440
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,6 +60,8 @@ GameObject:
   - component: {fileID: 6873573519525397435}
   - component: {fileID: 6873573519525397439}
   - component: {fileID: 1206510984314159}
+  - component: {fileID: -6362812959916368338}
+  - component: {fileID: 3918278317488340551}
   m_Layer: 0
   m_Name: ChickenBrown
   m_TagString: Enemy
@@ -103,6 +107,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -127,6 +132,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &6873573519525397435
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -154,6 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 10
+  manager: {fileID: 0}
 --- !u!54 &1206510984314159
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -170,3 +177,38 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!195 &-6362812959916368338
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6874639151339751440}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.31
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.65
+  m_BaseOffset: 0.08
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &3918278317488340551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6874639151339751440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358614411af108a4990d4c1a5fe85984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1

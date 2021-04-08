@@ -21,7 +21,7 @@ public class BulletDmg : MonoBehaviour
     {
         if (other.tag == "Enemy") 
         {
-            other.GetComponent<ChickenHp>().DamageToEnemyManager(damage);
+            other.GetComponent<EnemyHp>().DamageToEnemyManager(damage);
             Destroy(this.gameObject);
         }
        

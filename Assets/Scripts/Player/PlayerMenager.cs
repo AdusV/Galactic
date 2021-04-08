@@ -4,12 +4,13 @@ public class PlayerMenager : MonoBehaviour
 {
     public float protectTime = 3;
     public bool isProtect;
-    public MeshRenderer renderer;
+    public new MeshRenderer renderer;
     private Color defaultColor;
 
     // Start is called before the first frame update
     void Start()
     {
+      
         isProtect = true;
         defaultColor = renderer.material.color;
         renderer.material.color = Color.red;

@@ -1,14 +1,14 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChickenHp : MonoBehaviour
+public class BossHp : MonoBehaviour
 {
-    [SerializeField] int hp = 10;
+    [SerializeField] int hp = 100;
     public void DamageToEnemyManager(int dmg)
     {
         hp -= dmg;
-        if (hp <= 0) 
+        if (hp <= 0)
         {
             Destroy(this.gameObject);
         }
