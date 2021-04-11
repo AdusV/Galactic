@@ -4,24 +4,27 @@ using UnityEngine;
 
 public class BulletDmg : MonoBehaviour
 {
-    public float thrust = 5f;
+    // public float thrust = 5f;
     [SerializeField] int damage = 5;
+
+    public Vector3 Direction;
    
     Rigidbody rb;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-       
     }
+    
     private void FixedUpdate()
     {
-        rb.AddForce(0, thrust , 0);
+        rb.AddForce(Direction);
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy") 
+        if (other.CompareTag("Enemy")) 
         {
             other.GetComponent<EnemyHp>().DamageToEnemyManager(damage);
+            
             Destroy(this.gameObject);
         }
        

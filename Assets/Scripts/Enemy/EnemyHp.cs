@@ -20,10 +20,13 @@ public class EnemyHp : MonoBehaviour
     public void DamageToEnemyManager(int dmg)
     {
         hp -= dmg;
-        if (hp <= 0) 
+        if (hp > 0) return;
+        
+        
+        if (particle != null)
         {
             Instantiate(particle, transform.position, transform.rotation);
-            Destroy(this.gameObject);
         }
+        Destroy(this.gameObject);
     }
 }

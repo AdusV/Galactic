@@ -161,6 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 10
   manager: {fileID: 0}
+  particle: {fileID: 0}
 --- !u!54 &1206510984314159
 Rigidbody:
   m_ObjectHideFlags: 0

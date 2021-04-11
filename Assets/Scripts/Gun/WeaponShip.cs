@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class WeaponShip : MonoBehaviour
 {
-    public List<GameObject> prefubWeapons = new List<GameObject>();
-    private GameObject clone;
+    public List<GameObject> prefabWeapons = new List<GameObject>();
 
     //
     public GameObject currentWeapon;
@@ -19,13 +19,19 @@ public class WeaponShip : MonoBehaviour
     void Start()
     {
         SetDefaultWeapon();
+        foreach (var prefabWeapon in prefabWeapons)
+        {
+            var shoot = prefabWeapon.GetComponent<Shoot>();
+            shoot.Level = 1;
+        }
     }
 
     private void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            clone = Instantiate(currentWeapon, transform.position, Quaternion.identity);
+            var shoot = currentWeapon.GetComponent<Shoot>();
+            shoot._Shoot(this.transform);
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -41,10 +47,10 @@ public class WeaponShip : MonoBehaviour
 
     public void SetDefaultWeapon()
     {
-        currentWeapon = prefubWeapons.First();
+        currentWeapon = prefabWeapons.First();
         currentWeaponId = 0;
         weapons.Clear();
-        weapons.Add(prefubWeapons.First());
+        weapons.Add(prefabWeapons.First());
     }
 
     internal void AddWeapon(string tag)
@@ -53,7 +59,7 @@ public class WeaponShip : MonoBehaviour
         if (weapon == null)
         {
             Debug.Log("test");
-            var weaponPrefab = prefubWeapons.FirstOrDefault(x => x.tag == tag);
+            var weaponPrefab = prefabWeapons.FirstOrDefault(x => x.tag == tag);
             if (weaponPrefab == null)
             {
                 throw new Exception("Brak rodzaju broni w deklarowanych prefabach");
@@ -61,6 +67,14 @@ public class WeaponShip : MonoBehaviour
 
             weapon = weaponPrefab;
             weapons.Add(weapon);
+        }
+        else
+        {
+            var shoot = weapon.GetComponent<Shoot>();
+            if (shoot.Level < 6)
+            {
+                shoot.Level++;
+            }
         }
         currentWeapon = weapon;
     }
