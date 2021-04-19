@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657755, g: 0.4964127, b: 0.57481825, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657642, g: 0.49641156, b: 0.5748181, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26384
+  m_Name: pb_Mesh19346
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chicken: {fileID: 6874639151339751440, guid: 2f4ef485db4596543b32ef1ca01b877f, type: 3}
-  maxEnemyCount: 1
+  maxEnemyCount: 10
   timeBetweenSpawns: 0.1
 --- !u!4 &144555504
 Transform:
@@ -1035,12 +1035,12 @@ PrefabInstance:
     - target: {fileID: 1958567964140321054, guid: 48e4c41d31c2db8408c42b5cded9c4a2,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1958567964140321054, guid: 48e4c41d31c2db8408c42b5cded9c4a2,
         type: 3}
       propertyPath: maxEnemyCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1958567964140321055, guid: 48e4c41d31c2db8408c42b5cded9c4a2,
         type: 3}
@@ -1113,6 +1113,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7585388029816147195, guid: 2970eeb2b560f6c4789995afc19711d3,
         type: 3}
+    - target: {fileID: 1958567964140321061, guid: 48e4c41d31c2db8408c42b5cded9c4a2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48e4c41d31c2db8408c42b5cded9c4a2, type: 3}
 --- !u!1 &1539493682
@@ -1164,10 +1169,11 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1539493682}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2970,6 +2976,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 102952232}
+  m_VersionIndex: 0
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

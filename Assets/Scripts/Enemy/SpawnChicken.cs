@@ -12,20 +12,9 @@ public class SpawnChicken : MonoBehaviour
     int enemyCount = 0;
     public float maxEnemyCount = 20;
     public float timeBetweenSpawns = .1f;
-    /// 
+  
 
-    public static SpawnChicken Instance = null;
     private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this.gameObject);
-        }
-        Instance = this;
-    }
-    /// 
-
-    private void Start()
     {
         InvokeRepeating("Spawn", 0, timeBetweenSpawns);
     }

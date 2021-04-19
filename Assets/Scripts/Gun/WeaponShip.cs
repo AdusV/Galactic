@@ -14,6 +14,9 @@ public class WeaponShip : MonoBehaviour
     private int currentWeaponId;
 
     public List<GameObject> weapons = new List<GameObject>();
+    //
+    public GameObject missileWeapon;
+    private GameObject clone;
  
     
     void Start()
@@ -43,6 +46,11 @@ public class WeaponShip : MonoBehaviour
             currentWeaponId = (currentWeaponId == weapons.Count() - 1) ? 0 : currentWeaponId + 1;
             currentWeapon = weapons[currentWeaponId];
         }
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            clone =Instantiate(missileWeapon, transform.position, Quaternion.identity);
+        }
+
     }
 
     public void SetDefaultWeapon()

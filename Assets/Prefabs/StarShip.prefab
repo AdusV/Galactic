@@ -51,6 +51,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -178,6 +179,8 @@ MonoBehaviour:
   - {fileID: 7282981569317703555, guid: 1977cf47e2ae1994b9bffa8b16968225, type: 3}
   currentWeapon: {fileID: 0}
   weapons: []
+  missileWeapon: {fileID: 134864692981084793, guid: 22a586a38a559af479b9b9b259a83180,
+    type: 3}
 --- !u!114 &425605624
 MonoBehaviour:
   m_ObjectHideFlags: 0

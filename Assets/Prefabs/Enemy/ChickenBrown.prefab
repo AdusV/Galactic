@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   egg: {fileID: 4546708324289567639, guid: 95427ccc55281f947a21c4b1e8fea6bc, type: 3}
-  spawnThreshold: 100
+  spawnThreshold: 10000
   spawnDecrement: 0.1
 --- !u!1 &6874639151339751440
 GameObject:
@@ -103,6 +103,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -161,7 +162,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 10
   manager: {fileID: 0}
-  particle: {fileID: 0}
+  particle: {fileID: 5440210902866964302, guid: 83efb62da2a1db248b947de12901ce75,
+    type: 3}
 --- !u!54 &1206510984314159
 Rigidbody:
   m_ObjectHideFlags: 0
