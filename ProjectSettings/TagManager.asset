@@ -9,6 +9,7 @@ TagManager:
   - defaultBullet
   - yellowBullet
   - greenBullet
+  - missileDrop
   layers:
   - Default
   - TransparentFX

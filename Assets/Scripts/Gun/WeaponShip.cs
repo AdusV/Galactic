@@ -15,8 +15,13 @@ public class WeaponShip : MonoBehaviour
 
     public List<GameObject> weapons = new List<GameObject>();
     //
-    public GameObject missileWeapon;
+    public  GameObject missileWeapon;
     private GameObject clone;
+    public int amountMissile;
+    //
+    public GameObject particleWeapon;
+
+
  
     
     void Start()
@@ -46,9 +51,16 @@ public class WeaponShip : MonoBehaviour
             currentWeaponId = (currentWeaponId == weapons.Count() - 1) ? 0 : currentWeaponId + 1;
             currentWeapon = weapons[currentWeaponId];
         }
-        if(Input.GetKeyDown(KeyCode.Space))
+     
+        if(Input.GetKeyDown(KeyCode.G))
         {
-            clone =Instantiate(missileWeapon, transform.position, Quaternion.identity);
+            Debug.Log("Aktwyje Particla");
+            clone = Instantiate(particleWeapon, transform.position, Quaternion.Euler(-90,0,0));
+            particleWeapon.gameObject.SetActive(true);
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && amountMissile >= 1 )
+        {
+            Instantiate(missileWeapon, transform.position, Quaternion.identity);
         }
 
     }
